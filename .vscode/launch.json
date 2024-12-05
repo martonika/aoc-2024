@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'aoc-2024'",
+            "name": "Debug executable 'aoc2024'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=aoc-2024",
-                    "--package=aoc-2024"
+                    "--bin=aoc2024",
+                    "--package=aoc2024"
                 ],
                 "filter": {
-                    "name": "aoc-2024",
+                    "name": "aoc2024",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'aoc-2024'",
+            "name": "Debug unit tests in executable 'aoc2024'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=aoc-2024",
-                    "--package=aoc-2024"
+                    "--bin=aoc2024",
+                    "--package=aoc2024"
                 ],
                 "filter": {
-                    "name": "aoc-2024",
+                    "name": "aoc2024",
                     "kind": "bin"
                 }
             },
