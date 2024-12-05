@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'rustvent-of-code-2023'",
+            "name": "Debug executable 'aoc-2024'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=rustvent-of-code-2023",
-                    "--package=rustvent-of-code-2023"
+                    "--bin=aoc-2024",
+                    "--package=aoc-2024"
                 ],
                 "filter": {
-                    "name": "rustvent-of-code-2023",
+                    "name": "aoc-2024",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'rustvent-of-code-2023'",
+            "name": "Debug unit tests in executable 'aoc-2024'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=rustvent-of-code-2023",
-                    "--package=rustvent-of-code-2023"
+                    "--bin=aoc-2024",
+                    "--package=aoc-2024"
                 ],
                 "filter": {
-                    "name": "rustvent-of-code-2023",
+                    "name": "aoc-2024",
                     "kind": "bin"
                 }
             },

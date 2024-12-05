@@ -14,13 +14,13 @@ mod tests {
     use super::*;
     #[test]
     fn part1() {
-        let result = solve_1("src/day1/test1.txt");
-        assert_eq!(result, 142);
+        let result = solve_1("src/dayXX/test1.txt");
+        assert_eq!(result, 0);
     }
 
     #[test]
     fn part2() {
-        let result = solve_2("src/day1/test2.txt");
-        assert_eq!(result, 281);
+        let result = solve_2("src/dayXX/test2.txt");
+        assert_eq!(result, 0);
     }
 }
