@@ -31,7 +31,7 @@ fn calc_possible_combinations(
     }
 }
 
-fn calculate(test_val: &u64, nums: &Vec<u64>, pt2: bool) -> u64 {
+fn calculate(test_val: &u64, nums: &[u64], pt2: bool) -> u64 {
     let mut combinations = Vec::new();
     calc_possible_combinations(&nums[1..], nums[0], &mut combinations, pt2);
 
@@ -47,7 +47,7 @@ pub fn solve_1(input: &str) -> u64 {
         .map(|line| {
             let l: Vec<&str> = line.split(':').collect();
             let test_value = l[0].parse::<u64>().unwrap();
-            let nums_str: Vec<&str> = l[1].trim().split_whitespace().collect();
+            let nums_str: Vec<&str> = l[1].split_whitespace().collect();
             let nums: Vec<u64> = nums_str.iter().map(|s| s.parse::<u64>().unwrap()).collect();
 
             calculate(&test_value, &nums, false)
@@ -60,7 +60,7 @@ pub fn solve_2(input: &str) -> u64 {
         .map(|line| {
             let l: Vec<&str> = line.split(':').collect();
             let test_value = l[0].parse::<u64>().unwrap();
-            let nums_str: Vec<&str> = l[1].trim().split_whitespace().collect();
+            let nums_str: Vec<&str> = l[1].split_whitespace().collect();
             let nums: Vec<u64> = nums_str.iter().map(|s| s.parse::<u64>().unwrap()).collect();
 
             calculate(&test_value, &nums, true)

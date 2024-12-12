@@ -74,7 +74,7 @@ impl Debug for Tile {
 }
 
 pub fn step(
-    map: &mut Vec<Vec<Tile>>,
+    map: &mut [Vec<Tile>],
     mut path: Option<&mut HashSet<(usize, usize, Orientation)>>,
 ) -> Route {
     for row in 0..map.len() {
@@ -193,7 +193,7 @@ pub fn solve_1(input: &str) -> u32 {
     let data = fs::read_to_string(input).expect("Can't open file");
     let mut map: Vec<Vec<Tile>> = data
         .lines()
-        .map(|l| l.chars().map(|c| Tile::from_char(c)).collect())
+        .map(|l| l.chars().map(Tile::from_char).collect())
         .collect();
 
     while step(&mut map, None) == Route::InProgress {
@@ -206,13 +206,7 @@ pub fn solve_1(input: &str) -> u32 {
     let visited: Vec<&Tile> = map
         .iter()
         .flatten()
-        .filter(|c| {
-            if let Tile::Floor(FloorType::Lava) = c {
-                true
-            } else {
-                false
-            }
-        })
+        .filter(|c| matches!(c, Tile::Floor(FloorType::Lava)))
         .collect();
 
     visited.len() as u32
@@ -222,7 +216,7 @@ pub fn solve_2(input: &str) -> u32 {
     let data = fs::read_to_string(input).expect("Can't open file");
     let original_map: Vec<Vec<Tile>> = data
         .lines()
-        .map(|l| l.chars().map(|c| Tile::from_char(c)).collect())
+        .map(|l| l.chars().map(Tile::from_char).collect())
         .collect();
 
     let mut map = original_map.clone();
@@ -235,7 +229,7 @@ pub fn solve_2(input: &str) -> u32 {
         //println!();
     }
     // Remove the guard's starting point
-    for row in 0..original_map.len() {
+    for (row, _) in original_map.iter().enumerate() {
         for col in 0..original_map[row].len() {
             if let Tile::Guard(_) = original_map[row][col] {
                 // Remove all possible movements through the starting point

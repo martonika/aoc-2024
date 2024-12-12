@@ -36,7 +36,7 @@ pub fn solve_2(input: &str) -> u32 {
 
     let nums: Vec<u32> = nums_1
         .iter()
-        .map(|v| v * similarity.get(&v).unwrap_or(&0))
+        .map(|v| v * similarity.get(v).unwrap_or(&0))
         .collect();
 
     nums.iter().sum()

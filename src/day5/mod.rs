@@ -25,7 +25,6 @@ pub fn solve_1(input: &str) -> u32 {
 
     let order_pairs: Vec<(u8, u8)> = data
         .lines()
-        .into_iter()
         .take_while(|line| !line.is_empty())
         .map(|line| {
             let pages: Vec<&str> = line.split('|').collect();
@@ -38,7 +37,6 @@ pub fn solve_1(input: &str) -> u32 {
 
     let page_list: Vec<Vec<u8>> = data
         .lines()
-        .into_iter()
         .skip_while(|line| !line.is_empty())
         .skip(1)
         .map(|line| {
@@ -98,7 +96,6 @@ pub fn solve_2(input: &str) -> u32 {
 
     let order_pairs: Vec<(u8, u8)> = data
         .lines()
-        .into_iter()
         .take_while(|line| !line.is_empty())
         .map(|line| {
             let pages: Vec<&str> = line.split('|').collect();
@@ -111,7 +108,6 @@ pub fn solve_2(input: &str) -> u32 {
 
     let page_list: Vec<Vec<u8>> = data
         .lines()
-        .into_iter()
         .skip_while(|line| !line.is_empty())
         .skip(1)
         .map(|line| {

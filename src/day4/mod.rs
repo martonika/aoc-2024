@@ -69,23 +69,20 @@ pub fn valid_words_pt2(input: &[[char; SIZE]; SIZE]) -> u32 {
 
     for row in 3..(SIZE - 3) {
         for col in 3..(SIZE - 3) {
-            match input[row][col] {
-                'A' => {
-                    let chars = [
-                        input[row - 1][col - 1],
-                        input[row - 1][col + 1],
-                        input[row + 1][col - 1],
-                        input[row + 1][col + 1],
-                    ];
-                    match chars {
-                        ['M', 'M', 'S', 'S']
-                        | ['S', 'S', 'M', 'M']
-                        | ['M', 'S', 'M', 'S']
-                        | ['S', 'M', 'S', 'M'] => cnt += 1,
-                        _ => {}
-                    }
+            if input[row][col] == 'A' {
+                let chars = [
+                    input[row - 1][col - 1],
+                    input[row - 1][col + 1],
+                    input[row + 1][col - 1],
+                    input[row + 1][col + 1],
+                ];
+                match chars {
+                    ['M', 'M', 'S', 'S']
+                    | ['S', 'S', 'M', 'M']
+                    | ['M', 'S', 'M', 'S']
+                    | ['S', 'M', 'S', 'M'] => cnt += 1,
+                    _ => {}
                 }
-                _ => {}
             }
         }
     }
