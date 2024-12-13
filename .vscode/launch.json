@@ -31,14 +31,14 @@
                     "test",
                     "--no-run",
                     "--bin=aoc2024",
-                    "--package=aoc2024"
+                    "--package=aoc2024",
                 ],
                 "filter": {
                     "name": "aoc2024",
                     "kind": "bin"
                 }
             },
-            "args": [],
+            "args": ["${command:extension.commandvariable.file.fileDirBasename}","--","--nocapture"],
             "cwd": "${workspaceFolder}"
         }
     ]

@@ -6,6 +6,7 @@ pub mod day5;
 pub mod day6;
 pub mod day7;
 pub mod day8;
+pub mod day9;
 
 fn main() {
     let day1_1 = day1::solve_1("src/day1/input.txt");
@@ -42,7 +43,8 @@ fn main() {
     // this is way too slow - TODO redo with a proper algorithm
     //let day6_2 = day6::solve_2("src/day6/input.txt");
     println!("Day 6/1: {day6_1}");
-    println!("Day 6/2: 1951"); //{day6_2}");
+    //println!("Day 6/2: {day6_2}");
+    println!("Day 6/2: 1951");
     println!();
 
     let day7_1 = day7::solve_1("src/day7/input.txt");
@@ -57,13 +59,13 @@ fn main() {
     println!("Day 8/2: {day8_2}");
     println!();
 
-    /*let day9_1 = day9::solve_1("src/day9/input.txt");
+    let day9_1 = day9::solve_1("src/day9/input.txt");
     let day9_2 = day9::solve_2("src/day9/input.txt");
     println!("Day 9/1: {day9_1}");
     println!("Day 9/2: {day9_2}");
     println!();
 
-    let day10_1 = day10::solve_1("src/day10/input.txt");
+    /*let day10_1 = day10::solve_1("src/day10/input.txt");
     let day10_2 = day10::solve_2("src/day10/input.txt");
     println!("Day 10/1: {day10_1}");
     println!("Day 10/2: {day10_2}");
