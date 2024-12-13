@@ -79,14 +79,13 @@ fn move_file(blocks: &mut [Block]) {
                 left += 1;
                 free_len += 1;
             }
-            if free_len >= file_len && left <= right {
+            if free_len >= file_len && left <= right + 1 { // One "overlap" is allowed - it's when the data starts right after the found free space
                 let (l, r) = blocks.split_at_mut(left);
                 let start_left = left - free_len;
-                let start_right = right - left + 1;
+                let start_right = right - (left - 1);
 
                 l[start_left..start_left + file_len]
                     .swap_with_slice(&mut r[start_right..start_right + file_len]);
-                println!("{:?}", blocks);
                 break;
             }
         }
@@ -146,8 +145,6 @@ pub fn solve_2(input: &str) -> u64 {
             }
         })
         .collect();
-
-    println!("{:?}", blocks);
 
     move_file(&mut blocks);
 
