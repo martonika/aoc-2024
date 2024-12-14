@@ -7,22 +7,11 @@ use std::{
 #[derive(Debug, Clone, Copy)]
 struct Height {
     height: u32,
-    coord: (usize, usize),
 }
 
 #[derive(Debug, Clone)]
 struct Graph {
-    node: Height,
     neighbors: RefCell<HashMap<(usize, usize), Height>>,
-}
-
-impl Graph {
-    fn new(node: Height) -> Self {
-        Self {
-            node,
-            neighbors: RefCell::new(HashMap::new()),
-        }
-    }
 }
 
 fn build_graphs(
@@ -35,7 +24,6 @@ fn build_graphs(
     let mut score_pt2 = 0;
     let current_node = map[row][col];
     graphs.push(Graph {
-        node: current_node,
         neighbors: RefCell::new(HashMap::new()),
     });
     let curr_graph = graphs.last().unwrap();
@@ -107,14 +95,11 @@ pub fn solve_1(input: &str) -> u32 {
     let mut points: HashMap<usize, Height> = HashMap::new();
     let mut map: Vec<Vec<Height>> = data
         .lines()
-        .enumerate()
-        .map(|(row, line)| {
+        .map(|line| {
             line.chars()
-                .enumerate()
-                .map(|(col, b)| {
+                .map(|b| {
                     id += 1;
                     let h = Height {
-                        coord: (row, col),
                         height: b.to_digit(10).unwrap(),
                     };
                     points.insert(id, h);
@@ -145,14 +130,11 @@ pub fn solve_2(input: &str) -> u32 {
     let mut points: HashMap<usize, Height> = HashMap::new();
     let mut map: Vec<Vec<Height>> = data
         .lines()
-        .enumerate()
-        .map(|(row, line)| {
+        .map(|line| {
             line.chars()
-                .enumerate()
-                .map(|(col, b)| {
+                .map(|b| {
                     id += 1;
                     let h = Height {
-                        coord: (row, col),
                         height: b.to_digit(10).unwrap(),
                     };
                     points.insert(id, h);
