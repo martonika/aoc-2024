@@ -1,4 +1,5 @@
 pub mod day1;
+pub mod day10;
 pub mod day2;
 pub mod day3;
 pub mod day4;
@@ -65,9 +66,9 @@ fn main() {
     println!("Day 9/2: {day9_2}");
     println!();
 
-    /*let day10_1 = day10::solve_1("src/day10/input.txt");
+    let day10_1 = day10::solve_1("src/day10/input.txt");
     let day10_2 = day10::solve_2("src/day10/input.txt");
     println!("Day 10/1: {day10_1}");
     println!("Day 10/2: {day10_2}");
-    println!(); */
+    println!();
 }
