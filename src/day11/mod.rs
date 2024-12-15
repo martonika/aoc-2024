@@ -56,7 +56,7 @@ fn blink_2(stones: &mut HashMap<u64, u64>) {
 
 pub fn solve_1(input: &str, blinks: u64) -> u64 {
     let data = fs::read_to_string(input).expect("Can't open file");
-    // Contrary to the puzzle text, the order is not interesting at all
+    // Contrary to the puzzle text, the order is not important at all
     let mut stones: Vec<u64> = data
         .lines()
         .flat_map(|line| {
