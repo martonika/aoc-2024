@@ -4,6 +4,7 @@ pub fn solve_1(input: &str) -> u32 {
     let data = fs::read_to_string(input).expect("Can't open file");
     0
 }
+
 pub fn solve_2(input: &str) -> u32 {
     let data = fs::read_to_string(input).expect("Can't open file");
     0
