@@ -6,7 +6,6 @@ use std::fs;
 use std::ops::Add;
 
 use aoc2024::util::coord::Coord;
-use itertools::Position;
 
 #[derive(Debug, Clone, Copy, Eq, PartialEq)]
 enum Object {
