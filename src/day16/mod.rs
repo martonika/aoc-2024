@@ -24,15 +24,6 @@ enum Direction {
 }
 
 impl Direction {
-    fn get_dir(diff: &Coord) -> Option<Self> {
-        match diff {
-            Coord { x: 0, y: 1 } => Some(Self::Right),
-            Coord { x: 0, y: -1 } => Some(Self::Left),
-            Coord { x: 1, y: 0 } => Some(Self::Down),
-            Coord { x: -1, y: 0 } => Some(Self::Up),
-            _ => None,
-        }
-    }
     fn turn_right(&self) -> Self {
         match self {
             Direction::Up => Direction::Right,
@@ -50,13 +41,6 @@ impl Direction {
         }
     }
 }
-
-const DIRS: [Coord; 4] = [
-    Coord { x: 0, y: -1 },
-    Coord { x: 0, y: 1 },
-    Coord { x: -1, y: 0 },
-    Coord { x: 1, y: 0 },
-];
 
 #[derive(Clone, Eq, PartialEq)]
 struct Node {

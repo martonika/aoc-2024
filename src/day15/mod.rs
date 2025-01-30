@@ -1,5 +1,4 @@
-use aoc2024::util::coord::Coord; // Should've done this in like day2
-use core::time;
+use aoc2024::util::coord::Coord;
 use std::{fmt::Debug, fs};
 
 #[derive(Eq, PartialEq, Clone, Copy)]

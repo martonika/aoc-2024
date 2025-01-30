@@ -14,6 +14,19 @@ impl Coord {
     pub fn from_tuple((x, y): (isize, isize)) -> Self {
         Self { x, y }
     }
+
+    pub fn distance(&self, other: &Self) -> usize {
+        ((self.x - other.x).abs() + (self.y - other.y).abs()) as usize
+    }
+
+    pub fn neighbors(&self) -> [Self; 4] {
+        [
+            Self::new(self.x, self.y - 1),
+            Self::new(self.x, self.y + 1),
+            Self::new(self.x - 1, self.y),
+            Self::new(self.x + 1, self.y),
+        ]
+    }
 }
 
 impl Add for Coord {
