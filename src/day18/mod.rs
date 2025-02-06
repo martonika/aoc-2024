@@ -1,4 +1,5 @@
 use aoc2024::util::coord::Coord;
+#[allow(unused_imports)]
 use std::{fs, time};
 
 // These are inclusive
