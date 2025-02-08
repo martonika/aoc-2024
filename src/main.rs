@@ -13,6 +13,7 @@ pub mod day2;
 pub mod day20;
 pub mod day21;
 pub mod day22;
+pub mod day23;
 pub mod day3;
 pub mod day4;
 pub mod day5;
@@ -157,5 +158,11 @@ fn main() {
     let day22_2 = day22::solve_2("src/day22/input.txt");
     println!("Day 22/1: {day22_1}");
     println!("Day 22/2: {day22_2}");
+    println!();
+
+    let day23_1 = day23::solve_1("src/day23/input.txt");
+    let day23_2 = day23::solve_2("src/day23/input.txt");
+    println!("Day 23/1: {day23_1}");
+    println!("Day 23/2: {day23_2}");
     println!();
 }
