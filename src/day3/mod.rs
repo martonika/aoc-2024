@@ -1,7 +1,6 @@
 use std::fs;
 
 use regex::Regex;
-extern crate regex;
 
 pub fn solve_1(input: &str) -> u32 {
     let data = fs::read_to_string(input).expect("Can't open file");
